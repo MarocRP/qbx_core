@@ -4999,7 +4999,7 @@ return {
         name = 'Powersurge',
         brand = 'Western',
         model = 'powersurge',
-        price = 23026,
+        price = 1605000,
         category = 'motorcycles',
         type = 'bike',
         hash = `powersurge`,

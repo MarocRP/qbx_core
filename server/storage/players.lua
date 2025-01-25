@@ -148,6 +148,7 @@ end
 local function fetchPlayerEntity(citizenId)
     ---@type PlayerEntityDatabase
     local player = MySQL.single.await('SELECT userId, citizenid, license, name, charinfo, money, job, gang, position, metadata, UNIX_TIMESTAMP(last_logged_out) AS lastLoggedOutUnix FROM players WHERE citizenid = ?', { citizenId })
+    if not player then return nil end
     local charinfo = player and json.decode(player.charinfo)
     return player and {
         userId = player.userId,
@@ -264,8 +265,8 @@ local function fetchIsUnique(type, value)
         FingerId = "JSON_VALUE(metadata, '$.fingerprint')",
         WalletId = "JSON_VALUE(metadata, '$.walletid')",
         SerialNumber = "JSON_VALUE(metadata, '$.phonedata.SerialNumber')",
+        DnaId = "JSON_VALUE(metadata, '$.dnaid')",
     }
-
     local result = MySQL.single.await('SELECT COUNT(*) as count FROM players WHERE ' .. typeToColumn[type] .. ' = ?', { value })
     return result.count == 0
 end

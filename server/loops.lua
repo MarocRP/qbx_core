@@ -1,26 +1,9 @@
 local config = require 'config.server'
 
-local function removeHungerAndThirst(src, player)
-    local playerState = Player(src).state
-    if not playerState.isLoggedIn then return end
-    local newHunger = playerState.hunger - config.player.hungerRate
-    local newThirst = playerState.thirst - config.player.thirstRate
-
-    player.Functions.SetMetaData('thirst', math.max(0, newThirst))
-    player.Functions.SetMetaData('hunger', math.max(0, newHunger))
-
-    player.Functions.Save()
+local function sendPaycheck(player, payment)
+    player.Functions.AddMoney('bank', payment, 'paycheck')
+    Notify(player.PlayerData.source, locale('info.received_paycheck', payment))
 end
-
-CreateThread(function()
-    local interval = 60000 * config.updateInterval
-    while true do
-        Wait(interval)
-        for src, player in pairs(QBX.Players) do
-            removeHungerAndThirst(src, player)
-        end
-    end
-end)
 
 local function pay(player)
     local job = player.PlayerData.job
@@ -31,17 +14,21 @@ local function pay(player)
         config.sendPaycheck(player, payment)
         return
     end
-    local account = config.getSocietyAccount(job.name)
+    local jobAccountName = job.name
+    if job.name == 'unemployed' then
+        jobAccountName = 'government'
+    end
+    local account = config.getSocietyAccount(jobAccountName)
     if not account then -- Checks if player is employed by a society
-        config.sendPaycheck(player, payment)
+        Notify(player.PlayerData.source, locale('error.company_account_doesnt_exist'):format(jobAccountName), 'error')
         return
     end
     if account < payment then -- Checks if company has enough money to pay society
-        Notify(player.PlayerData.source, locale('error.company_too_poor'), 'error')
+        Notify(player.PlayerData.source, locale('error.company_too_poor'):format(jobAccountName), 'error')
         return
     end
-    config.removeSocietyMoney(job.name, payment)
-    config.sendPaycheck(player, payment)
+    config.removeSocietyMoney(jobAccountName, payment, 'paycheck for ' .. player.PlayerData.charinfo.firstname .. ' ' .. player.PlayerData.charinfo.lastname)
+    sendPaycheck(player, payment)
 end
 
 CreateThread(function()

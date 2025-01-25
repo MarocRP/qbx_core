@@ -1,351 +1,844 @@
 ---Job names must be lower case (top level table key)
 ---@type table<string, Job>
 return {
-    ['unemployed'] = {
-        label = 'Civilian',
-        defaultDuty = true,
-        offDutyPay = false,
-        grades = {
+	-- Admin Job
+	['admin'] = {
+		label = 'MAROC ROLEPLAY',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
             [0] = {
-                name = 'Freelancer',
+                name = 'MODERATOR',
+                payment = 0,
+            },
+            [1] = {
+                name = 'ADMIN',
+                payment = 0,
+                isboss = true,
+            },
+            [2] = {
+                name = 'SUPER ADMIN',
+                payment = 0,
+                isboss = true,
+            },
+        },
+	},
+	['unemployed'] = {
+		label = 'CIVILIAN',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'UNEMPLOYED',
                 payment = 10
             },
         },
-    },
-    ['police'] = {
-        label = 'LSPD',
+	},
+	-- State Jobs
+	['government'] = {
+		label = 'GOVERNMENT',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'GOUVERNOR',
+                payment = 0,
+                isboss = true,
+            },
+        },
+	},
+	['justice'] = {
+		label = 'MINISTRY OF JUSTICE',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'PROSECUTOR',
+                payment = 600
+            },
+            [1] = {
+                name = 'JUDGE',
+                payment = 600
+            },
+			[2] = {
+                name = 'MINISTER OF JUSTICE',
+				isboss = true,
+                payment = 0
+            },
+        },
+	},
+	['police'] = { -- 20
+		label = 'DGSN',
         type = 'leo',
         defaultDuty = true,
         offDutyPay = false,
         grades = {
             [0] = {
-                name = 'Recruit',
-                payment = 50
+                name = 'PEACE KEEPER', -- 0
+                payment = 200
             },
-            [1] = {
-                name = 'Officer',
-                payment = 75
+			[1] = {
+                name = 'INSPECTOR', -- 4
+                payment = 250
             },
-            [2] = {
-                name = 'Sergeant',
-                payment = 100
+			[2] = {
+                name = 'PRINCIPAL INSPECTOR', -- 2
+                payment = 300
             },
-            [3] = {
-                name = 'Lieutenant',
-                payment = 125
+			[3] = {
+                name = 'OFFICER', -- 2
+                payment = 350
             },
-            [4] = {
-                name = 'Chief',
-                isboss = true,
-                bankAuth = true,
-                payment = 150
+			[4] = {
+                name = 'PRINCIPAL OFFICER', -- 2
+                payment = 400
+            },
+			[5] = {
+                name = 'COMMISSIONER', -- 2
+                payment = 450
+            },
+			[6] = {
+                name = 'PRINCIPAL COMMISSIONER', -- 2
+                payment = 500
+            },
+			[7] = {
+                name = 'REGIONAL COMMISSIONER', -- 2
+                payment = 550
+            },
+			[8] = {
+                name = 'GENERAL CONTROLLER', -- 2
+				isboss = true,
+                payment = 600
+            },
+			[9] = {
+                name = 'PREFECT', -- 1
+				isboss = true,
+                payment = 650
+            },
+			[10] = {
+                name = 'DGSN DIRECTOR', -- 1
+				isboss = true,
+                payment = 700
             },
         },
-    },
-    ['bcso'] = {
-        label = 'BCSO',
-        type = 'leo',
-        defaultDuty = true,
+	},
+	['civilprotection'] = { -- 12
+		label = 'DGPC',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			[0] = {
+                name = 'SERGEANT', -- 0
+                payment = 200
+            },
+			[1] = {
+                name = 'CHIEF SERGEANT', -- 3
+                payment = 250
+            },
+			[2] = {
+                name = 'ADJUDANT', -- 1
+                payment = 300
+            },
+			[3] = {
+                name = 'CHIEF ADJUDANT', -- 1
+                payment = 350
+            },
+			[4] = {
+                name = 'SUB-LIEUTENANT', -- 1
+                payment = 400
+            },
+			[5] = {
+                name = 'LIEUTENANT', -- 1
+                payment = 450
+            },
+			[6] = {
+                name = 'CAPTAIN', -- 1
+                payment = 500
+            },
+			[7] = {
+                name = 'COMMANDER', -- 1
+                payment = 550
+            },
+			[8] = {
+                name = 'LIEUTENANT COLONEL', -- 1
+				isboss = true,
+                payment = 600
+            },
+			[9] = {
+                name = 'COLONEL', -- 1
+				isboss = true,
+                payment = 650
+            },
+			[10] = {
+                name = 'COLONEL MAJOR', -- 1
+				isboss = true,
+                payment = 700
+            },
+        },
+	},
+	['ambulance'] = { -- 6
+		label = 'CHU',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			[0] = {
+                name = 'TRAINEE NURSE', -- 0
+                payment = 200
+            },
+			[1] = {
+                name = 'NURSE', -- 2
+                payment = 300
+            },
+			[2] = {
+                name = 'PHYSICIAN', -- 1
+                payment = 400
+            },
+			[3] = {
+                name = 'SURGEON', -- 1
+                payment = 500
+            },
+			[4] = {
+                name = 'HOSPITAL MANAGER', -- 1
+				isboss = true,
+                payment = 600
+            },
+			[5] = {
+                name = 'HOSPITAL DIRECTOR', -- 1
+				isboss = true,
+                payment = 700
+            },
+        },
+	},
+	-- State Companies
+	['farmer'] = {
+		label = 'MAROC BIO',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'FARMER',
+                payment = 100
+            },
+            [1] = {
+                name = 'SUPERVISOR',
+                payment = 100
+            },
+            [2] = {
+                name = 'MANAGER',
+                isboss = true,
+                payment = 100
+            },
+			[3] = {
+                name = 'DIRECTOR',
+				isboss = true,
+                payment = 0
+            },
+        },
+	},
+	['miner'] = {
+		label = 'MANAGEM',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'MINER',
+                payment = 100
+            },
+            [1] = {
+                name = 'SUPERVISOR',
+                payment = 100
+            },
+            [2] = {
+                name = 'MANAGER',
+                isboss = true,
+                payment = 100
+            },
+			[3] = {
+                name = 'DIRECTOR',
+				isboss = true,
+                payment = 0
+            },
+        },
+	},
+	-- Public Job
+	['taxi'] = {
+		label = 'UBER',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'DRIVER',
+                payment = 0
+            },
+			[1] = {
+                name = 'OWNER',
+                isboss = true,
+                payment = 0
+            },
+        },
+	},
+	['courier'] = {
+		label = 'AMAZON',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'COURIER',
+                payment = 0
+            },
+			[1] = {
+                name = 'OWNER',
+                isboss = true,
+                payment = 0
+            },
+        },
+	},
+	['fueler'] = {
+		label = 'SHELL',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'FUELER',
+                payment = 0
+            },
+			[1] = {
+                name = 'OWNER',
+                isboss = true,
+                payment = 0
+            },
+        },
+	},
+	['electrician'] = { -- SOON
+		label = 'ONEE',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'ELECTRICIAN',
+                payment = 0
+            },
+			[1] = {
+                name = 'OWNER',
+                isboss = true,
+                payment = 0
+            },
+        },
+	},
+	-- Businesses
+	-- Casino
+    ['casino'] = {
+        label = 'DIAMOND CASINO',
+        defaultDuty = false,
         offDutyPay = false,
         grades = {
             [0] = {
-                name = 'Recruit',
-                payment = 50
+                name = 'REPRESENTATIVE',
+                payment = 100
             },
             [1] = {
-                name = 'Officer',
-                payment = 75
+                name = 'SUPERVISOR',
+                payment = 100
             },
             [2] = {
-                name = 'Sergeant',
+                name = 'MANAGER',
+                isboss = true,
                 payment = 100
             },
             [3] = {
-                name = 'Lieutenant',
-                payment = 125
-            },
-            [4] = {
-                name = 'Chief',
+                name = 'OWNER',
                 isboss = true,
-                bankAuth = true,
-                payment = 150
+                payment = 0
             },
         },
     },
-    ['sasp'] = {
-        label = 'SASP',
-        type = 'leo',
-        defaultDuty = true,
+	-- Restaurants
+    ['burgershot'] = {
+        label = 'RESTAURANT BURGERSHOT',
+        defaultDuty = false,
         offDutyPay = false,
         grades = {
             [0] = {
-                name = 'Recruit',
-                payment = 50
+                name = 'REPRESENTATIVE',
+                payment = 100
             },
             [1] = {
-                name = 'Officer',
-                payment = 75
+                name = 'SUPERVISOR',
+                payment = 100
             },
             [2] = {
-                name = 'Sergeant',
+                name = 'MANAGER',
+                isboss = true,
                 payment = 100
             },
             [3] = {
-                name = 'Lieutenant',
-                payment = 125
-            },
-            [4] = {
-                name = 'Chief',
+                name = 'OWNER',
                 isboss = true,
-                bankAuth = true,
-                payment = 150
+                payment = 0
             },
         },
     },
-    ['ambulance'] = {
-        label = 'EMS',
-        type = 'ems',
-        defaultDuty = true,
+    ['blackpan'] = {
+        label = 'RESTAURANT BLACKPAN',
+        defaultDuty = false,
         offDutyPay = false,
         grades = {
             [0] = {
-                name = 'Recruit',
-                payment = 50
+                name = 'REPRESENTATIVE',
+                payment = 100
             },
             [1] = {
-                name = 'Paramedic',
-                payment = 75
+                name = 'SUPERVISOR',
+                payment = 100
             },
             [2] = {
-                name = 'Doctor',
+                name = 'MANAGER',
+                isboss = true,
                 payment = 100
             },
             [3] = {
-                name = 'Surgeon',
-                payment = 125
-            },
-            [4] = {
-                name = 'Chief',
+                name = 'OWNER',
                 isboss = true,
-                bankAuth = true,
-                payment = 150
+                payment = 0
             },
         },
     },
-    ['realestate'] = {
-        label = 'Real Estate',
-        type = 'realestate',
-        defaultDuty = true,
+	-- Cafes
+    ['carrion'] = {
+        label = 'CAFE CARRION',
+        defaultDuty = false,
         offDutyPay = false,
         grades = {
             [0] = {
-                name = 'Recruit',
-                payment = 50
+                name = 'BARISTA',
+                payment = 100
             },
             [1] = {
-                name = 'House Sales',
-                payment = 75
+                name = 'SUPERVISOR',
+                payment = 100
             },
             [2] = {
-                name = 'Business Sales',
+                name = 'MANAGER',
+                isboss = true,
                 payment = 100
             },
             [3] = {
-                name = 'Broker',
-                payment = 125
-            },
-            [4] = {
-                name = 'Manager',
+                name = 'OWNER',
                 isboss = true,
-                bankAuth = true,
-                payment = 150
+                payment = 0
             },
         },
     },
-    ['taxi'] = {
-        label = 'Taxi',
-        defaultDuty = true,
+    ['dahab'] = {
+        label = 'CAFE DAHAB',
+        defaultDuty = false,
         offDutyPay = false,
         grades = {
             [0] = {
-                name = 'Recruit',
-                payment = 50
+                name = 'BARISTA',
+                payment = 100
             },
             [1] = {
-                name = 'Driver',
-                payment = 75
+                name = 'SUPERVISOR',
+                payment = 100
             },
             [2] = {
-                name = 'Event Driver',
+                name = 'MANAGER',
+                isboss = true,
                 payment = 100
             },
             [3] = {
-                name = 'Sales',
-                payment = 125
-            },
-            [4] = {
-                name = 'Manager',
+                name = 'OWNER',
                 isboss = true,
-                bankAuth = true,
-                payment = 150
+                payment = 0
             },
         },
     },
-    ['bus'] = {
-        label = 'Bus',
-        defaultDuty = true,
-        offDutyPay = false,
-        grades = {
+	-- Night Clubs
+	['unicorn'] = {
+		label = 'CLUB UNICORN',
+        type = 'nightclub',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
             [0] = {
-                name = 'Driver',
-                payment = 50
-            },
-        },
-    },
-    ['cardealer'] = {
-        label = 'Vehicle Dealer',
-        defaultDuty = true,
-        offDutyPay = false,
-        grades = {
-            [0] = {
-                name = 'Recruit',
-                payment = 50
+                name = 'WAITER',
+                payment = 100
             },
             [1] = {
-                name = 'Showroom Sales',
-                payment = 75
+                name = 'SUPERVISOR',
+                payment = 100
             },
             [2] = {
-                name = 'Business Sales',
+                name = 'MANAGER',
+                isboss = true,
+                payment = 100
+            },
+			[3] = {
+                name = 'OWNER',
+				isboss = true,
+                payment = 0
+            },
+        },
+	},
+	['ibiza'] = {
+		label = 'CLUB IBIZA',
+        type = 'nightclub',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'WAITER',
+                payment = 100
+            },
+            [1] = {
+                name = 'SUPERVISOR',
+                payment = 100
+            },
+            [2] = {
+                name = 'MANAGER',
+                isboss = true,
+                payment = 100
+            },
+			[3] = {
+                name = 'OWNER',
+				isboss = true,
+                payment = 0
+            },
+        },
+	},
+	['club77'] = {
+		label = 'CLUB 77',
+        type = 'nightclub',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'WAITER',
+                payment = 100
+            },
+            [1] = {
+                name = 'SUPERVISOR',
+                payment = 100
+            },
+            [2] = {
+                name = 'MANAGER',
+                isboss = true,
+                payment = 100
+            },
+			[3] = {
+                name = 'OWNER',
+				isboss = true,
+                payment = 0
+            },
+        },
+	},
+	['vazou'] = {
+		label = 'CLUB VAZOU',
+        type = 'nightclub',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'WAITER',
+                payment = 100
+            },
+            [1] = {
+                name = 'SUPERVISOR',
+                payment = 100
+            },
+            [2] = {
+                name = 'MANAGER',
+                isboss = true,
+                payment = 100
+            },
+			[3] = {
+                name = 'OWNER',
+				isboss = true,
+                payment = 0
+            },
+        },
+	},
+	-- law firm Office
+	['lawyer'] = {
+		label = 'LAW OFFICE',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'LAWYER TRAINEE',
+                payment = 100
+            },
+            [1] = {
+                name = 'LAWYER',
+                payment = 100
+            },
+            [2] = {
+                name = 'LAWYER EXPERT',
+				isboss = true,
                 payment = 100
             },
             [3] = {
-                name = 'Finance',
-                payment = 125
-            },
-            [4] = {
-                name = 'Manager',
-                isboss = true,
-                bankAuth = true,
-                payment = 150
+                name = 'LAWYER FOUNDER',
+				isboss = true,
+                payment = 0
             },
         },
-    },
-    ['mechanic'] = {
-        label = 'Mechanic',
+	},
+	-- Bazar Shops
+	['pawnshop'] = {
+		label = 'ABBAS BAZAAR',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'REPRESENTATIVE',
+                payment = 100
+            },
+            [1] = {
+                name = 'SUPERVISOR',
+                payment = 100
+            },
+			[2] = {
+                name = 'MANAGER',
+				isboss = true,
+                payment = 100
+            },
+			[3] = {
+                name = 'OWNER',
+				isboss = true,
+                payment = 0
+            },
+        },
+	},
+	-- Car/Motorcycle/Boar Dealer Shops
+	['cardealer1'] = {
+		label = 'AUTOHALL SOUTH',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'REPRESENTATIVE',
+                payment = 100
+            },
+            [1] = {
+                name = 'SUPERVISOR',
+                payment = 100
+            },
+			[2] = {
+                name = 'MANAGER',
+                isboss = true,
+                payment = 100
+            },
+			[3] = {
+                name = 'OWNER',
+                isboss = true,
+                payment = 0
+            },
+        },
+	},
+	['cardealer2'] = {
+		label = 'AUTOHALL NORTH',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'REPRESENTATIVE',
+                payment = 100
+            },
+            [1] = {
+                name = 'SUPERVISOR',
+                payment = 100
+            },
+			[2] = {
+                name = 'MANAGER',
+                isboss = true,
+                payment = 100
+            },
+			[3] = {
+                name = 'OWNER',
+                isboss = true,
+                payment = 0
+            },
+        },
+	},
+	['motordealer1'] = {
+		label = 'EXOTIC MOTORS',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'REPRESENTATIVE',
+                payment = 100
+            },
+            [1] = {
+                name = 'SUPERVISOR',
+                payment = 100
+            },
+			[2] = {
+                name = 'MANAGER',
+                isboss = true,
+                payment = 100
+            },
+			[3] = {
+                name = 'OWNER',
+                isboss = true,
+                payment = 0
+            },
+        },
+	},
+	['motordealer2'] = {
+		label = 'SANDERS MOTORS',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'REPRESENTATIVE',
+                payment = 100
+            },
+            [1] = {
+                name = 'SUPERVISOR',
+                payment = 100
+            },
+			[2] = {
+                name = 'MANAGER',
+                isboss = true,
+                payment = 100
+            },
+			[3] = {
+                name = 'OWNER',
+                isboss = true,
+                payment = 0
+            },
+        },
+	},
+	['boatdealer'] = {
+		label = 'VANGUARD BOATS',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'REPRESENTATIVE',
+                payment = 100
+            },
+            [1] = {
+                name = 'SUPERVISOR',
+                payment = 100
+            },
+			[2] = {
+                name = 'MANAGER',
+                isboss = true,
+                payment = 100
+            },
+			[3] = {
+                name = 'OWNER',
+                isboss = true,
+                payment = 0
+            },
+        },
+	},
+	-- Mechanic Shops
+	['mechanic1'] = {
+		label = 'AUTO ZONE',
         type = 'mechanic',
-        defaultDuty = true,
-        offDutyPay = false,
-        grades = {
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
             [0] = {
-                name = 'Recruit',
-                payment = 50
+                name = 'RECRUIT',
+                payment = 100
             },
             [1] = {
-                name = 'Novice',
-                payment = 75
-            },
-            [2] = {
-                name = 'Experienced',
+                name = 'MECHANIC',
                 payment = 100
             },
-            [3] = {
-                name = 'Advanced',
-                payment = 125
-            },
-            [4] = {
-                name = 'Manager',
+			[2] = {
+                name = 'MANAGER',
                 isboss = true,
-                bankAuth = true,
-                payment = 150
-            },
-        },
-    },
-    ['judge'] = {
-        label = 'Honorary',
-        defaultDuty = true,
-        offDutyPay = false,
-        grades = {
-            [0] = {
-                name = 'Judge',
                 payment = 100
             },
-        },
-    },
-    ['lawyer'] = {
-        label = 'Law Firm',
-        defaultDuty = true,
-        offDutyPay = false,
-        grades = {
-            [0] = {
-                name = 'Associate',
-                payment = 50
+			[3] = {
+                name = 'OWNER',
+                isboss = true,
+                payment = 0
             },
         },
-    },
-    ['reporter'] = {
-        label = 'Reporter',
-        defaultDuty = true,
-        offDutyPay = false,
-        grades = {
+	},
+	['mechanic2'] = {
+		label = 'AUTO MASTER',
+        type = 'mechanic',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
             [0] = {
-                name = 'Journalist',
-                payment = 50
+                name = 'RECRUIT',
+                payment = 100
+            },
+            [1] = {
+                name = 'MECHANIC',
+                payment = 100
+            },
+			[2] = {
+                name = 'MANAGER',
+                isboss = true,
+                payment = 100
+            },
+			[3] = {
+                name = 'OWNER',
+                isboss = true,
+                payment = 0
             },
         },
-    },
-    ['trucker'] = {
-        label = 'Trucker',
-        defaultDuty = true,
-        offDutyPay = false,
-        grades = {
+	},
+	-- Electronic Shop
+	['digitalden'] = {
+		label = 'DIGITALDEN',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
             [0] = {
-                name = 'Driver',
-                payment = 50
+                name = 'TECHNICIAN',
+                payment = 100
+            },
+            [1] = {
+                name = 'SUPERVISOR',
+                payment = 100
+            },
+			[2] = {
+                name = 'MANAGER',
+                isboss = true,
+                payment = 100
+            },
+			[3] = {
+                name = 'OWNER',
+                isboss = true,
+                payment = 0
             },
         },
-    },
-    ['tow'] = {
-        label = 'Towing',
-        defaultDuty = true,
-        offDutyPay = false,
-        grades = {
+	},
+	-- Chill Spot
+	['chillspot'] = {
+		label = 'CHILL SPOT',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
             [0] = {
-                name = 'Driver',
-                payment = 50
+                name = 'REPRESENTATIVE',
+                payment = 100
             },
-        },
-    },
-    ['garbage'] = {
-        label = 'Garbage',
-        defaultDuty = true,
-        offDutyPay = false,
-        grades = {
-            [0] = {
-                name = 'Collector',
-                payment = 50
+            [1] = {
+                name = 'SUPERVISOR',
+                payment = 100
             },
-        },
-    },
-    ['vineyard'] = {
-        label = 'Vineyard',
-        defaultDuty = true,
-        offDutyPay = false,
-        grades = {
-            [0] = {
-                name = 'Picker',
-                payment = 50
+			[2] = {
+                name = 'MANAGER',
+                isboss = true,
+                payment = 100
             },
-        },
-    },
-    ['hotdog'] = {
-        label = 'Hotdog',
-        defaultDuty = true,
-        offDutyPay = false,
-        grades = {
-            [0] = {
-                name = 'Sales',
-                payment = 50
+			[3] = {
+                name = 'OWNER',
+                isboss = true,
+                payment = 0
             },
         },
     },

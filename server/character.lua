@@ -1,12 +1,17 @@
 local config = require 'config.server'
 local logger = require 'modules.logger'
 local storage = require 'server.storage.main'
+local slots = require 'server.storage.slots'
 local starterItems = require 'config.shared'.starterItems
 
 ---@param license2 string
 ---@param license? string
 local function getAllowedAmountOfCharacters(license2, license)
-    return config.characters.playersNumberOfCharacters[license2] or license and config.characters.playersNumberOfCharacters[license] or config.characters.defaultNumberOfCharacters
+    local result = slots.fetchSlots(license2, license)
+    local playerSlots = result and result[1] and result[1].slots or nil
+    return
+        playerSlots or
+        config.characters.defaultNumberOfCharacters
 end
 
 ---@param source Source

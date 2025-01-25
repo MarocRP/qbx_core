@@ -605,16 +605,20 @@ function CheckPlayerData(source, playerData)
     -- Metadata
     playerData.metadata = playerData.metadata or {}
     playerData.metadata.optin = playerData.metadata.optin and true or false
+     -- Carboot Metadata
+    playerData.metadata.carboostclass = playerData.metadata.carboostclass or 'D'
+    playerData.metadata.carboostrep = playerData.metadata.carboostrep or 0
+    playerData.metadata.laptopdata = playerData.metadata.laptopdata or {
+        wallpaper = 'default',
+        apps = {}
+    }
+    -- Carboot Metadata End
     playerData.metadata.health = playerData.metadata.health or 200
     playerData.metadata.hunger = playerData.metadata.hunger or 100
     playerData.metadata.thirst = playerData.metadata.thirst or 100
     playerData.metadata.stress = playerData.metadata.stress or 0
-    if playerState then
-        playerState:set('hunger', playerData.metadata.hunger, true)
-        playerState:set('thirst', playerData.metadata.thirst, true)
-        playerState:set('stress', playerData.metadata.stress, true)
-    end
-
+	playerData.metadata.communityservice = playerData.metadata.communityservice or 0
+    playerData.metadata.visagranted = playerData.metadata.visagranted or false
     playerData.metadata.isdead = playerData.metadata.isdead or false
     playerData.metadata.inlaststand = playerData.metadata.inlaststand or false
     playerData.metadata.armor = playerData.metadata.armor or 0
@@ -625,6 +629,7 @@ function CheckPlayerData(source, playerData)
     playerData.metadata.status = playerData.metadata.status or {}
     playerData.metadata.phone = playerData.metadata.phone or {}
     playerData.metadata.bloodtype = playerData.metadata.bloodtype or config.player.bloodTypes[math.random(1, #config.player.bloodTypes)]
+	playerData.metadata.dnaid = playerData.metadata.dnaid or GenerateUniqueIdentifier('DnaId')
     playerData.metadata.dealerrep = playerData.metadata.dealerrep or 0
     playerData.metadata.craftingrep = playerData.metadata.craftingrep or 0
     playerData.metadata.attachmentcraftingrep = playerData.metadata.attachmentcraftingrep or 0
@@ -642,9 +647,22 @@ function CheckPlayerData(source, playerData)
         date = nil
     }
     playerData.metadata.licences = playerData.metadata.licences or {
-        id = true,
-        driver = true,
-        weapon = false,
+        idcard = false, -- ID Card
+        weapon = false, -- Weapon
+		hunting = false, -- Hunting
+		fishing = false, -- Fishing
+        driverTa = false, -- Theory Motor
+        driverTb = false, -- Theory Car
+        driverTc = false, -- Theory Truck
+		driverTw = false, -- Theory Boat
+		driverTh = false, -- Theory Heli
+		driverTp = false, -- Theory Plane
+        driverA = false, -- Motorcycle
+        driverB = false, -- Car
+        driverC = false, -- Truck
+		driverW = false, -- Boat
+        driverH = false, -- Heli
+        driverP = false, -- Plane
     }
     playerData.metadata.inside = playerData.metadata.inside or {
         house = nil,
@@ -1337,6 +1355,12 @@ function RemoveMoney(identifier, moneyType, amount, reason)
         SaveOffline(player.PlayerData)
     else
         UpdatePlayerData(identifier)
+
+        if moneyType == 'bank' then
+            CreateThread(function()
+                exports.ss_banking:handleWithdrawFromPersonalAccount(player.PlayerData.source, amount, player.PlayerData.money[moneyType], reason)
+            end)
+        end
 
         local tags = amount > 100000 and config.logging.role or nil
         local resource = GetInvokingResource() or cache.resource

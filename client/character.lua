@@ -278,8 +278,8 @@ local function spawnDefault() -- We use a callback to make the server wait on th
 
     TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
     TriggerEvent('QBCore:Client:OnPlayerLoaded')
-    TriggerServerEvent('qb-houses:server:SetInsideMeta', 0, false)
-    TriggerServerEvent('qb-apartments:server:SetInsideMeta', 0, 0, false)
+    --TriggerServerEvent('qb-houses:server:SetInsideMeta', 0, false)
+    --TriggerServerEvent('qb-apartments:server:SetInsideMeta', 0, 0, false)
 
     while not IsScreenFadedIn() do
         Wait(0)
@@ -484,6 +484,9 @@ local function chooseCharacter()
 
     SetTimecycleModifier('default')
     lib.showContext('qbx_core_multichar_characters')
+    if amount > 0 then
+        previewPed(characters[1].citizenid)
+    end
 end
 
 RegisterNetEvent('qbx_core:client:spawnNoApartments', function() -- This event is only for no starting apartments

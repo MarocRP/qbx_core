@@ -5,32 +5,32 @@ return {
         ---@alias MoneyType 'cash' | 'bank' | 'crypto'
         ---@alias Money {cash: number, bank: number, crypto: number}
         ---@type Money
-        moneyTypes = { cash = 500, bank = 5000, crypto = 0 }, -- type = startamount - Add or remove money types for your server (for ex. blackmoney = 0), remember once added it will not be removed from the database!
-        dontAllowMinus = { 'cash', 'crypto' }, -- Money that is not allowed going in minus
+        moneyTypes = { cash = 500, bank = 5000, crypto = 0, cosmo = 0 }, -- type = startamount - Add or remove money types for your server (for ex. blackmoney = 0), remember once added it will not be removed from the database!
+        dontAllowMinus = { 'cash', 'crypto', 'bank', 'cosmo' }, -- Money that is not allowed going in minus
         paycheckTimeout = 10, -- The time in minutes that it will give the paycheck
-        paycheckSociety = false -- If true paycheck will come from the society account that the player is employed at
+        paycheckSociety = true -- If true paycheck will come from the society account that the player is employed at, requires qb-management
     },
 
     player = {
-        hungerRate = 4.2, -- Rate at which hunger goes down.
-        thirstRate = 3.8, -- Rate at which thirst goes down.
+        -- hungerRate = 6.2, -- Rate at which hunger goes down.
+        -- thirstRate = 6.2, -- Rate at which thirst goes down.
 
         ---@enum BloodType
         bloodTypes = {
             'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-',
         },
 
-        ---@alias UniqueIdType 'citizenid' | 'AccountNumber' | 'PhoneNumber' | 'FingerId' | 'WalletId' | 'SerialNumber'
+        ---@alias UniqueIdType 'citizenid' | 'AccountNumber' | 'PhoneNumber' | 'FingerId' | 'WalletId' | 'SerialNumber' | 'DnaId'
         ---@type table<UniqueIdType, {valueFunction: function}>
         identifierTypes = {
             citizenid = {
                 valueFunction = function()
-                    return lib.string.random('A.......')
+                    return lib.string.random('MA......')
                 end,
             },
             AccountNumber = {
                 valueFunction = function()
-                    return 'US0' .. math.random(1, 9) .. 'QBX' .. math.random(1111, 9999) .. math.random(1111, 9999) .. math.random(11, 99)
+                    return 'MA0' .. math.random(1, 9) .. 'MRP' .. math.random(1111, 9999) .. math.random(1111, 9999) .. math.random(11, 99)
                 end,
             },
             PhoneNumber = {
@@ -45,12 +45,17 @@ return {
             },
             WalletId = {
                 valueFunction = function()
-                    return 'QB-' .. math.random(11111111, 99999999)
+                    return 'SS-' .. math.random(11111111, 99999999)
                 end,
             },
             SerialNumber = {
                 valueFunction = function()
                     return math.random(11111111, 99999999)
+                end,
+            },
+            DnaId = {
+                valueFunction = function()
+                    return lib.string.random('......')
                 end,
             },
         }
@@ -60,23 +65,12 @@ return {
     ---@alias ColumnName string
     ---@type [TableName, ColumnName][]
     characterDataTables = {
-        {'properties', 'owner'},
-        {'bank_accounts_new', 'id'},
         {'playerskins', 'citizenid'},
         {'player_mails', 'citizenid'},
         {'player_outfits', 'citizenid'},
         {'player_vehicles', 'citizenid'},
         {'player_groups', 'citizenid'},
         {'players', 'citizenid'},
-        {'npwd_calls', 'identifier'},
-        {'npwd_darkchat_channel_members', 'user_identifier'},
-        {'npwd_marketplace_listings', 'identifier'},
-        {'npwd_messages_participants', 'participant'},
-        {'npwd_notes', 'identifier'},
-        {'npwd_phone_contacts', 'identifier'},
-        {'npwd_phone_gallery', 'identifier'},
-        {'npwd_twitter_profiles', 'identifier'},
-        {'npwd_match_profiles', 'identifier'},
     }, -- Rows to be deleted when the character is deleted
 
     server = {
@@ -96,7 +90,7 @@ return {
             ['license2:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'] = 5,
         },
 
-        defaultNumberOfCharacters = 3, -- Define maximum amount of default characters (maximum 3 characters defined by default)
+        defaultNumberOfCharacters = 1, -- Define maximum amount of default characters (maximum 3 characters defined by default)
     },
 
     -- this configuration is for core events only. putting other webhooks here will have no effect
@@ -116,7 +110,7 @@ return {
     },
 
     giveVehicleKeys = function(src, plate, vehicle)
-        return exports.qbx_vehiclekeys:GiveKeys(src, vehicle)
+        return exports.ss_vehiclekeys:giveTempKey(src, plate)
     end,
 
     setVehicleLock = function(vehicle, state)
@@ -124,18 +118,10 @@ return {
     end,
 
     getSocietyAccount = function(accountName)
-        return exports['Renewed-Banking']:getAccountMoney(accountName)
+        return exports.ss_banking:GetAccount(accountName)
     end,
 
-    removeSocietyMoney = function(accountName, payment)
-        return exports['Renewed-Banking']:removeAccountMoney(accountName, payment)
-    end,
-
-    ---Paycheck function
-    ---@param player Player Player object
-    ---@param payment number Payment amount
-    sendPaycheck = function (player, payment)
-        player.Functions.AddMoney('bank', payment)
-        Notify(player.PlayerData.source, locale('info.received_paycheck', payment))
-    end,
+    removeSocietyMoney = function(accountName, payment, reason)
+        return exports.ss_banking:RemoveMoney(accountName, payment, reason)
+    end
 }

@@ -159,23 +159,17 @@ lib.addCommand('car', {
     if not IsOptin(source) then Notify(source, locale('error.not_optin'), 'error') return end
 
     if not args then return end
-
-    local ped, bucket = GetPlayerPed(source), GetPlayerRoutingBucket(source)
-    local keepCurrentVehicle = args[locale('command.car.params.keepCurrentVehicle.name')]
-    local currentVehicle = not keepCurrentVehicle and GetVehiclePedIsIn(ped, false)
-    if currentVehicle and currentVehicle ~= 0 then
-        DeleteVehicle(currentVehicle)
-    end
-
-    local _, vehicle = qbx.spawnVehicle({
-        model = args[locale('command.car.params.model.name')],
-        spawnSource = ped,
-        warp = true,
-        bucket = bucket
+    local plate = exports.ss_vspawner:generateUniqPlate('ADM')
+    config.giveVehicleKeys(source, plate)
+    local playerPed = GetPlayerPed(src)
+    local coords = GetEntityCoords(playerPed)
+    exports.ss_vspawner:spawnVehicle(src, {
+        model = args[locale("command.car.params.model.name")],
+        coords = vector4(coords.x, coords.y, coords.z, GetEntityHeading(playerPed)),
+        plate = plate,
+        wrap = true,
+        spawnerGroup = 'admin'
     })
-
-    local plate = qbx.getVehiclePlate(vehicle)
-    config.giveVehicleKeys(source, plate, vehicle)
 end)
 
 lib.addCommand('dv', {
