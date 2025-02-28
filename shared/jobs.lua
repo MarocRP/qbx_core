@@ -613,7 +613,7 @@ return {
 	},
 	-- Car/Motorcycle/Boar Dealer Shops
 	['cardealer1'] = {
-		label = 'AUTOHALL SOUTH',
+		label = 'PDM VESPUCCI',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -638,7 +638,7 @@ return {
         },
 	},
 	['cardealer2'] = {
-		label = 'AUTOHALL NORTH',
+		label = 'PDM DOWNTOWN',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -688,7 +688,7 @@ return {
         },
 	},
 	['motordealer2'] = {
-		label = 'SANDERS MOTORS',
+		label = 'LEGENDARY MOTORS',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
