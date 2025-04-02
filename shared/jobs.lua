@@ -47,6 +47,18 @@ return {
             },
         },
 	},
+	['economy'] = {
+		label = 'MINISTRY OF ECONOMY',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'MINISTER DELEGATE',
+                payment = 0,
+                isboss = true,
+            },
+        },
+	},
 	['justice'] = {
 		label = 'MINISTRY OF JUSTICE',
 		defaultDuty = true,
@@ -54,11 +66,11 @@ return {
 		grades = {
             [0] = {
                 name = 'PROSECUTOR',
-                payment = 600
+                payment = 0
             },
             [1] = {
                 name = 'JUDGE',
-                payment = 600
+                payment = 0
             },
 			[2] = {
                 name = 'MINISTER OF JUSTICE',
@@ -75,50 +87,50 @@ return {
         grades = {
             [0] = {
                 name = 'PEACE KEEPER', -- 0
-                payment = 200
+                payment = 270
             },
 			[1] = {
                 name = 'INSPECTOR', -- 4
-                payment = 250
+                payment = 320
             },
 			[2] = {
                 name = 'PRINCIPAL INSPECTOR', -- 2
-                payment = 300
+                payment = 370
             },
 			[3] = {
                 name = 'OFFICER', -- 2
-                payment = 350
+                payment = 420
             },
 			[4] = {
                 name = 'PRINCIPAL OFFICER', -- 2
-                payment = 400
+                payment = 470
             },
 			[5] = {
                 name = 'COMMISSIONER', -- 2
-                payment = 450
+                payment = 520
             },
 			[6] = {
                 name = 'PRINCIPAL COMMISSIONER', -- 2
-                payment = 500
+                payment = 570
             },
 			[7] = {
                 name = 'REGIONAL COMMISSIONER', -- 2
-                payment = 550
+                payment = 620
             },
 			[8] = {
                 name = 'GENERAL CONTROLLER', -- 2
 				isboss = true,
-                payment = 600
+                payment = 670
             },
 			[9] = {
                 name = 'PREFECT', -- 1
 				isboss = true,
-                payment = 650
+                payment = 720
             },
 			[10] = {
                 name = 'DGSN DIRECTOR', -- 1
 				isboss = true,
-                payment = 700
+                payment = 770
             },
         },
 	},
@@ -129,50 +141,50 @@ return {
 		grades = {
 			[0] = {
                 name = 'SERGEANT', -- 0
-                payment = 200
+                payment = 270
             },
 			[1] = {
                 name = 'CHIEF SERGEANT', -- 3
-                payment = 250
+                payment = 320
             },
 			[2] = {
                 name = 'ADJUDANT', -- 1
-                payment = 300
+                payment = 370
             },
 			[3] = {
                 name = 'CHIEF ADJUDANT', -- 1
-                payment = 350
+                payment = 420
             },
 			[4] = {
                 name = 'SUB-LIEUTENANT', -- 1
-                payment = 400
+                payment = 470
             },
 			[5] = {
                 name = 'LIEUTENANT', -- 1
-                payment = 450
+                payment = 520
             },
 			[6] = {
                 name = 'CAPTAIN', -- 1
-                payment = 500
+                payment = 570
             },
 			[7] = {
                 name = 'COMMANDER', -- 1
-                payment = 550
+                payment = 620
             },
 			[8] = {
                 name = 'LIEUTENANT COLONEL', -- 1
 				isboss = true,
-                payment = 600
+                payment = 670
             },
 			[9] = {
                 name = 'COLONEL', -- 1
 				isboss = true,
-                payment = 650
+                payment = 720
             },
 			[10] = {
                 name = 'COLONEL MAJOR', -- 1
 				isboss = true,
-                payment = 700
+                payment = 770
             },
         },
 	},
@@ -183,29 +195,29 @@ return {
 		grades = {
 			[0] = {
                 name = 'TRAINEE NURSE', -- 0
-                payment = 200
+                payment = 280
             },
 			[1] = {
                 name = 'NURSE', -- 2
-                payment = 300
+                payment = 380
             },
 			[2] = {
                 name = 'PHYSICIAN', -- 1
-                payment = 400
+                payment = 480
             },
 			[3] = {
                 name = 'SURGEON', -- 1
-                payment = 500
+                payment = 580
             },
 			[4] = {
                 name = 'HOSPITAL MANAGER', -- 1
 				isboss = true,
-                payment = 600
+                payment = 680
             },
 			[5] = {
                 name = 'HOSPITAL DIRECTOR', -- 1
 				isboss = true,
-                payment = 700
+                payment = 780
             },
         },
 	},
@@ -217,16 +229,16 @@ return {
 		grades = {
             [0] = {
                 name = 'FARMER',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
             [2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
 			[3] = {
                 name = 'DIRECTOR',
@@ -242,16 +254,16 @@ return {
 		grades = {
             [0] = {
                 name = 'MINER',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
             [2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
 			[3] = {
                 name = 'DIRECTOR',
@@ -334,16 +346,16 @@ return {
         grades = {
             [0] = {
                 name = 'REPRESENTATIVE',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
             [2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
             [3] = {
                 name = 'OWNER',
@@ -360,16 +372,16 @@ return {
         grades = {
             [0] = {
                 name = 'REPRESENTATIVE',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
             [2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
             [3] = {
                 name = 'OWNER',
@@ -385,16 +397,16 @@ return {
         grades = {
             [0] = {
                 name = 'REPRESENTATIVE',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
             [2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
             [3] = {
                 name = 'OWNER',
@@ -411,16 +423,16 @@ return {
         grades = {
             [0] = {
                 name = 'BARISTA',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
             [2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
             [3] = {
                 name = 'OWNER',
@@ -436,16 +448,16 @@ return {
         grades = {
             [0] = {
                 name = 'BARISTA',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
             [2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
             [3] = {
                 name = 'OWNER',
@@ -463,16 +475,16 @@ return {
 		grades = {
             [0] = {
                 name = 'WAITER',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
             [2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
 			[3] = {
                 name = 'OWNER',
@@ -489,16 +501,16 @@ return {
 		grades = {
             [0] = {
                 name = 'WAITER',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
             [2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
 			[3] = {
                 name = 'OWNER',
@@ -515,16 +527,16 @@ return {
 		grades = {
             [0] = {
                 name = 'WAITER',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
             [2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
 			[3] = {
                 name = 'OWNER',
@@ -541,16 +553,16 @@ return {
 		grades = {
             [0] = {
                 name = 'WAITER',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
             [2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
 			[3] = {
                 name = 'OWNER',
@@ -567,16 +579,16 @@ return {
 		grades = {
             [0] = {
                 name = 'LAWYER TRAINEE',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'LAWYER',
-                payment = 100
+                payment = 0
             },
             [2] = {
                 name = 'LAWYER EXPERT',
 				isboss = true,
-                payment = 100
+                payment = 0
             },
             [3] = {
                 name = 'LAWYER FOUNDER',
@@ -593,16 +605,16 @@ return {
 		grades = {
             [0] = {
                 name = 'REPRESENTATIVE',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
 			[2] = {
                 name = 'MANAGER',
 				isboss = true,
-                payment = 100
+                payment = 0
             },
 			[3] = {
                 name = 'OWNER',
@@ -619,16 +631,16 @@ return {
 		grades = {
             [0] = {
                 name = 'REPRESENTATIVE',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
 			[2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
 			[3] = {
                 name = 'OWNER',
@@ -644,16 +656,16 @@ return {
 		grades = {
             [0] = {
                 name = 'REPRESENTATIVE',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
 			[2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
 			[3] = {
                 name = 'OWNER',
@@ -669,16 +681,16 @@ return {
 		grades = {
             [0] = {
                 name = 'REPRESENTATIVE',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
 			[2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
 			[3] = {
                 name = 'OWNER',
@@ -694,16 +706,16 @@ return {
 		grades = {
             [0] = {
                 name = 'REPRESENTATIVE',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
 			[2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
 			[3] = {
                 name = 'OWNER',
@@ -719,16 +731,16 @@ return {
 		grades = {
             [0] = {
                 name = 'REPRESENTATIVE',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
 			[2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
 			[3] = {
                 name = 'OWNER',
@@ -746,16 +758,16 @@ return {
 		grades = {
             [0] = {
                 name = 'RECRUIT',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'MECHANIC',
-                payment = 100
+                payment = 0
             },
 			[2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
 			[3] = {
                 name = 'OWNER',
@@ -772,16 +784,16 @@ return {
 		grades = {
             [0] = {
                 name = 'RECRUIT',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'MECHANIC',
-                payment = 100
+                payment = 0
             },
 			[2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
 			[3] = {
                 name = 'OWNER',
@@ -798,16 +810,16 @@ return {
 		grades = {
             [0] = {
                 name = 'TECHNICIAN',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
 			[2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
 			[3] = {
                 name = 'OWNER',
@@ -819,21 +831,21 @@ return {
 	-- Chill Spot
 	['chillspot'] = {
 		label = 'CHILL SPOT',
-		defaultDuty = true,
+		defaultDuty = false,
 		offDutyPay = false,
 		grades = {
             [0] = {
                 name = 'REPRESENTATIVE',
-                payment = 100
+                payment = 0
             },
             [1] = {
                 name = 'SUPERVISOR',
-                payment = 100
+                payment = 0
             },
 			[2] = {
                 name = 'MANAGER',
                 isboss = true,
-                payment = 100
+                payment = 0
             },
 			[3] = {
                 name = 'OWNER',

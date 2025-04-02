@@ -73,7 +73,7 @@ return {
 
         secondButton = {
             text = 'Connect',
-            link = 'fivem://connect/mrp.marocroleplay.com',
+            link = 'fivem://connect/https://mrp.marocroleplay.com',
         }
     },
 
