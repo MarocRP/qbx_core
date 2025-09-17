@@ -34,8 +34,8 @@ return {
             },
         },
 	},
-	['gang1'] = {
-		label = 'GANG 1',
+	['ballas'] = {
+		label = 'BALLAS',
 		grades = {
             [0] = {
                 name = 'ASSOCIATE'
@@ -59,8 +59,8 @@ return {
             },
         },
 	},
-	['gang2'] = {
-		label = 'GANG 2',
+	['vagos'] = {
+		label = 'VAGOS',
 		grades = {
             [0] = {
                 name = 'ASSOCIATE'
@@ -84,8 +84,8 @@ return {
             },
         },
 	},
-	['gang3'] = {
-		label = 'GANG 3',
+	['famillies'] = {
+		label = 'FAMILLIES',
 		grades = {
             [0] = {
                 name = 'ASSOCIATE'
@@ -109,8 +109,8 @@ return {
             },
         },
 	},
-	['gang4'] = {
-		label = 'GANG 4',
+	['aztecas'] = {
+		label = 'AZTECAS',
 		grades = {
             [0] = {
                 name = 'ASSOCIATE'
@@ -134,8 +134,8 @@ return {
             },
         },
 	},
-	['gang5'] = {
-		label = 'GANG 5',
+	['marabunta'] = {
+		label = 'MARABUNTA',
 		grades = {
             [0] = {
                 name = 'ASSOCIATE'
@@ -159,58 +159,8 @@ return {
             },
         },
 	},
-	['gang6'] = {
-		label = 'GANG 6',
-		grades = {
-            [0] = {
-                name = 'ASSOCIATE'
-            },
-			[1] = {
-                name = 'ENFORCER'
-            },
-			[2] = {
-                name = 'CAPOREGIME'
-            },
-			[3] = {
-                name = 'CONSIGLIERE'
-            },
-			[4] = {
-                name = 'UNDER-BOSS',
-                isboss = true
-            },
-			[5] = {
-                name = 'BOSS',
-                isboss = true
-            },
-        },
-	},
-	['gang7'] = {
-		label = 'GANG 7',
-		grades = {
-            [0] = {
-                name = 'ASSOCIATE'
-            },
-			[1] = {
-                name = 'ENFORCER'
-            },
-			[2] = {
-                name = 'CAPOREGIME'
-            },
-			[3] = {
-                name = 'CONSIGLIERE'
-            },
-			[4] = {
-                name = 'UNDER-BOSS',
-                isboss = true
-            },
-			[5] = {
-                name = 'BOSS',
-                isboss = true
-            },
-        },
-	},
-	['gang8'] = {
-		label = 'GANG 8',
+	['lostmc'] = {
+		label = 'LOST MC',
 		grades = {
             [0] = {
                 name = 'ASSOCIATE'

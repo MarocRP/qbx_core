@@ -60,136 +60,118 @@ return {
         },
 	},
 	['justice'] = {
-		label = 'MINISTRY OF JUSTICE',
+		label = 'DOJ',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
             [0] = {
-                name = 'PROSECUTOR',
-                payment = 0
-            },
-            [1] = {
                 name = 'JUDGE',
                 payment = 0
             },
-			[2] = {
-                name = 'MINISTER OF JUSTICE',
+			[1] = {
+                name = 'SENIOR JUDGE',
 				isboss = true,
                 payment = 0
             },
         },
 	},
 	['police'] = { -- 20
-		label = 'DGSN',
+		label = 'LSPD',
         type = 'leo',
         defaultDuty = true,
         offDutyPay = false,
         grades = {
             [0] = {
-                name = 'PEACE KEEPER', -- 0
+                name = 'OFFICER P1',
                 payment = 270
             },
 			[1] = {
-                name = 'INSPECTOR', -- 4
+                name = 'OFFICER P2',
                 payment = 320
             },
 			[2] = {
-                name = 'PRINCIPAL INSPECTOR', -- 2
+                name = 'OFFICER P3',
                 payment = 370
             },
 			[3] = {
-                name = 'OFFICER', -- 2
+                name = 'DETECTIVE',
                 payment = 420
             },
 			[4] = {
-                name = 'PRINCIPAL OFFICER', -- 2
+                name = 'CORPORAL',
                 payment = 470
             },
 			[5] = {
-                name = 'COMMISSIONER', -- 2
+                name = 'SERGEANT',
                 payment = 520
             },
 			[6] = {
-                name = 'PRINCIPAL COMMISSIONER', -- 2
+                name = 'LIEUTENANT',
                 payment = 570
             },
 			[7] = {
-                name = 'REGIONAL COMMISSIONER', -- 2
+                name = 'CAPTAIN',
                 payment = 620
             },
 			[8] = {
-                name = 'GENERAL CONTROLLER', -- 2
+                name = 'COMMANDER',
 				isboss = true,
                 payment = 670
             },
 			[9] = {
-                name = 'PREFECT', -- 1
+                name = 'DEPUTY CHIEF',
 				isboss = true,
                 payment = 720
             },
 			[10] = {
-                name = 'DGSN DIRECTOR', -- 1
+                name = 'ASSISTANT CHIEF',
+				isboss = true,
+                payment = 720
+            },
+			[11] = {
+                name = 'CHIEF',
 				isboss = true,
                 payment = 770
             },
         },
 	},
-	['civilprotection'] = { -- 12
-		label = 'DGPC',
+	['firefighter'] = { -- 12
+		label = 'LSFD',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
 			[0] = {
-                name = 'SERGEANT', -- 0
+                name = 'FIREFIGHTER', -- 0
                 payment = 270
             },
 			[1] = {
-                name = 'CHIEF SERGEANT', -- 3
+                name = 'ENGINEER', -- 1
                 payment = 320
             },
 			[2] = {
-                name = 'ADJUDANT', -- 1
+                name = 'LIEUTENANT', -- 1
                 payment = 370
             },
 			[3] = {
-                name = 'CHIEF ADJUDANT', -- 1
+                name = 'CAPTAIN', -- 1
                 payment = 420
             },
 			[4] = {
-                name = 'SUB-LIEUTENANT', -- 1
+                name = 'BATTALION CHIEF', -- 1
                 payment = 470
             },
 			[5] = {
-                name = 'LIEUTENANT', -- 1
+                name = 'ASSISTANT CHIEF', -- 1
                 payment = 520
             },
 			[6] = {
-                name = 'CAPTAIN', -- 1
+                name = 'CHIEF', -- 1
                 payment = 570
-            },
-			[7] = {
-                name = 'COMMANDER', -- 1
-                payment = 620
-            },
-			[8] = {
-                name = 'LIEUTENANT COLONEL', -- 1
-				isboss = true,
-                payment = 670
-            },
-			[9] = {
-                name = 'COLONEL', -- 1
-				isboss = true,
-                payment = 720
-            },
-			[10] = {
-                name = 'COLONEL MAJOR', -- 1
-				isboss = true,
-                payment = 770
             },
         },
 	},
 	['ambulance'] = { -- 6
-		label = 'CHU',
+		label = 'LSMC',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -210,12 +192,12 @@ return {
                 payment = 580
             },
 			[4] = {
-                name = 'HOSPITAL MANAGER', -- 1
+                name = 'MANAGER', -- 1
 				isboss = true,
                 payment = 680
             },
 			[5] = {
-                name = 'HOSPITAL DIRECTOR', -- 1
+                name = 'DIRECTOR', -- 1
 				isboss = true,
                 payment = 780
             },
@@ -223,7 +205,7 @@ return {
 	},
 	-- State Companies
 	['farmer'] = {
-		label = 'MAROC BIO',
+		label = 'LOS SANTOS AGRI',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -248,7 +230,7 @@ return {
         },
 	},
 	['miner'] = {
-		label = 'MANAGEM',
+		label = 'LOS SANTOS MINECO',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -274,7 +256,7 @@ return {
 	},
 	-- Public Job
 	['taxi'] = {
-		label = 'UBER',
+		label = 'CAB CO',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -322,7 +304,7 @@ return {
         },
 	},
 	['electrician'] = { -- SOON
-		label = 'ONEE',
+		label = 'LOS SANTOS DEPT OF WATER AND POWER',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -366,12 +348,12 @@ return {
     },
 	-- Restaurants
     ['burgershot'] = {
-        label = 'RESTAURANT BURGERSHOT',
+        label = 'BURGERSHOT RESTAURANT',
         defaultDuty = false,
         offDutyPay = false,
         grades = {
             [0] = {
-                name = 'REPRESENTATIVE',
+                name = 'BURGER MAKER',
                 payment = 0
             },
             [1] = {
@@ -390,13 +372,13 @@ return {
             },
         },
     },
-    ['blackpan'] = {
-        label = 'RESTAURANT BLACKPAN',
+    ['pizzathis'] = {
+        label = 'PIZZA THIS',
         defaultDuty = false,
         offDutyPay = false,
         grades = {
             [0] = {
-                name = 'REPRESENTATIVE',
+                name = 'PIZZA MAKER',
                 payment = 0
             },
             [1] = {
@@ -416,8 +398,8 @@ return {
         },
     },
 	-- Cafes
-    ['carrion'] = {
-        label = 'CAFE CARRION',
+    ['beanmachine'] = {
+        label = 'BEAN MACHINE',
         defaultDuty = false,
         offDutyPay = false,
         grades = {
@@ -441,13 +423,13 @@ return {
             },
         },
     },
-    ['dahab'] = {
-        label = 'CAFE DAHAB',
+    ['freshfruit'] = {
+        label = 'FRESH FRUIT',
         defaultDuty = false,
         offDutyPay = false,
         grades = {
             [0] = {
-                name = 'BARISTA',
+                name = 'JUICE MAKER',
                 payment = 0
             },
             [1] = {
@@ -468,7 +450,7 @@ return {
     },
 	-- Night Clubs
 	['unicorn'] = {
-		label = 'CLUB UNICORN',
+		label = 'UNICORN NIGHTCLUB',
         type = 'nightclub',
 		defaultDuty = true,
 		offDutyPay = false,
@@ -494,7 +476,7 @@ return {
         },
 	},
 	['ibiza'] = {
-		label = 'CLUB IBIZA',
+		label = 'IBIZA NIGHTCLUB',
         type = 'nightclub',
 		defaultDuty = true,
 		offDutyPay = false,
@@ -520,7 +502,7 @@ return {
         },
 	},
 	['club77'] = {
-		label = 'CLUB 77',
+		label = '77 NIGHTCLUB',
         type = 'nightclub',
 		defaultDuty = true,
 		offDutyPay = false,
@@ -546,7 +528,7 @@ return {
         },
 	},
 	['vazou'] = {
-		label = 'CLUB VAZOU',
+		label = 'VAZOU NIGHTCLUB',
         type = 'nightclub',
 		defaultDuty = true,
 		offDutyPay = false,
@@ -751,7 +733,7 @@ return {
 	},
 	-- Mechanic Shops
 	['mechanic1'] = {
-		label = 'AUTO ZONE',
+		label = 'AUTO EXOTIC',
         type = 'mechanic',
 		defaultDuty = true,
 		offDutyPay = false,
@@ -777,7 +759,7 @@ return {
         },
 	},
 	['mechanic2'] = {
-		label = 'AUTO MASTER',
+		label = 'LOS SANTOS CUSTOMS',
         type = 'mechanic',
 		defaultDuty = true,
 		offDutyPay = false,
@@ -803,8 +785,8 @@ return {
         },
 	},
 	-- Electronic Shop
-	['digitalden'] = {
-		label = 'DIGITALDEN',
+	['clicklovers'] = {
+		label = 'CLICK LOVERS',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -830,7 +812,7 @@ return {
 	},
 	-- Chill Spot
 	['chillspot'] = {
-		label = 'CHILL SPOT',
+		label = 'CHILL SPOT LOUNGE',
 		defaultDuty = false,
 		offDutyPay = false,
 		grades = {
