@@ -10,7 +10,7 @@ lib.addCommand('tp', {
         { name = locale('command.tp.params.y.name'), help = locale('command.tp.params.y.help'), optional = true },
         { name = locale('command.tp.params.z.name'), help = locale('command.tp.params.z.help'), optional = true }
     },
-    restricted = 'group.admin'
+    restricted = 'group.superadmin'
 }, function(source, args)
     if not IsOptin(source) then Notify(source, locale('error.not_optin'), 'error') return end
 
@@ -40,7 +40,7 @@ end)
 
 lib.addCommand('tpm', {
     help = locale('command.tpm.help'),
-    restricted = 'group.admin'
+    restricted = 'group.superadmin'
 }, function(source)
     if not IsOptin(source) then Notify(source, locale('error.not_optin'), 'error') return end
 
@@ -49,7 +49,7 @@ end)
 
 lib.addCommand('togglepvp', {
     help = locale('command.togglepvp.help'),
-    restricted = 'group.admin'
+    restricted = 'group.superadmin'
 }, function(source)
     if not IsOptin(source) then Notify(source, locale('error.not_optin'), 'error') return end
 
@@ -63,7 +63,7 @@ lib.addCommand('addpermission', {
         { name = locale('command.addpermission.params.id.name'), help = locale('command.addpermission.params.id.help'), type = 'playerId' },
         { name = locale('command.addpermission.params.permission.name'), help = locale('command.addpermission.params.permission.help'), type = 'string' }
     },
-    restricted = 'group.admin'
+    restricted = 'group.superadmin'
 }, function(source, args)
     if not IsOptin(source) then Notify(source, locale('error.not_optin'), 'error') return end
 
@@ -84,7 +84,7 @@ lib.addCommand('removepermission', {
         { name = locale('command.removepermission.params.id.name'), help = locale('command.removepermission.params.id.help'), type = 'playerId' },
         { name = locale('command.removepermission.params.permission.name'), help = locale('command.removepermission.params.permission.help'), type = 'string' }
     },
-    restricted = 'group.admin'
+    restricted = 'group.superadmin'
 }, function(source, args)
     if not IsOptin(source) then Notify(source, locale('error.not_optin'), 'error') return end
 
@@ -101,7 +101,7 @@ end)
 
 lib.addCommand('openserver', {
     help = locale('command.openserver.help'),
-    restricted = 'group.admin'
+    restricted = 'group.superadmin'
 }, function(source)
     if not IsOptin(source) then Notify(source, locale('error.not_optin'), 'error') return end
 
@@ -123,7 +123,7 @@ lib.addCommand('closeserver', {
     params = {
         { name = locale('command.closeserver.params.reason.name'), help = locale('command.closeserver.params.reason.help'), type = 'string' }
     },
-    restricted = 'group.admin'
+    restricted = 'group.superadmin'
 }, function(source, args)
     if not IsOptin(source) then Notify(source, locale('error.not_optin'), 'error') return end
 
@@ -154,16 +154,16 @@ lib.addCommand('car', {
         { name = locale('command.car.params.model.name'), help = locale('command.car.params.model.help') },
         { name = locale('command.car.params.keepCurrentVehicle.name'), help = locale('command.car.params.keepCurrentVehicle.help'), optional = true },
     },
-    restricted = 'group.admin'
+    restricted = 'group.superadmin'
 }, function(source, args)
     if not IsOptin(source) then Notify(source, locale('error.not_optin'), 'error') return end
 
     if not args then return end
     local plate = exports.ss_vspawner:generateUniqPlate('ADM')
     config.giveVehicleKeys(source, plate)
-    local playerPed = GetPlayerPed(src)
+    local playerPed = GetPlayerPed(source)
     local coords = GetEntityCoords(playerPed)
-    exports.ss_vspawner:spawnVehicle(src, {
+    exports.ss_vspawner:spawnVehicle(source, {
         model = args[locale("command.car.params.model.name")],
         coords = vector4(coords.x, coords.y, coords.z, GetEntityHeading(playerPed)),
         plate = plate,
@@ -177,7 +177,7 @@ lib.addCommand('dv', {
     params = {
         { name = locale('command.dv.params.radius.name'), help = locale('command.dv.params.radius.help'), type = 'number', optional = true }
     },
-    restricted = 'group.admin'
+    restricted = 'group.superadmin'
 }, function(source, args)
     if not IsOptin(source) then Notify(source, locale('error.not_optin'), 'error') return end
 
@@ -208,7 +208,7 @@ lib.addCommand('givemoney', {
         { name = locale('command.givemoney.params.moneytype.name'), help = locale('command.givemoney.params.moneytype.help'), type = 'string' },
         { name = locale('command.givemoney.params.amount.name'), help = locale('command.givemoney.params.amount.help'), type = 'number' }
     },
-    restricted = 'group.admin'
+    restricted = 'group.superadmin'
 }, function(source, args)
     if not IsOptin(source) then Notify(source, locale('error.not_optin'), 'error') return end
 
@@ -228,7 +228,7 @@ lib.addCommand('setmoney', {
         { name = locale('command.setmoney.params.moneytype.name'), help = locale('command.setmoney.params.moneytype.help'), type = 'string' },
         { name = locale('command.setmoney.params.amount.name'), help = locale('command.setmoney.params.amount.help'), type = 'number' }
     },
-    restricted = 'group.admin'
+    restricted = 'group.superadmin'
 }, function(source, args)
     if not IsOptin(source) then Notify(source, locale('error.not_optin'), 'error') return end
 
@@ -255,7 +255,7 @@ lib.addCommand('setjob', {
         { name = locale('command.setjob.params.job.name'), help = locale('command.setjob.params.job.help'), type = 'string' },
         { name = locale('command.setjob.params.grade.name'), help = locale('command.setjob.params.grade.help'), type = 'number', optional = true }
     },
-    restricted = 'group.admin'
+    restricted = 'group.superadmin'
 }, function(source, args)
     if not IsOptin(source) then Notify(source, locale('error.not_optin'), 'error') return end
 
@@ -275,7 +275,7 @@ lib.addCommand('changejob', {
         { name = locale('command.changejob.params.id.name'), help = locale('command.changejob.params.id.help'), type = 'playerId' },
         { name = locale('command.changejob.params.job.name'), help = locale('command.changejob.params.job.help'), type = 'string' },
     },
-    restricted = 'group.admin'
+    restricted = 'group.superadmin'
 }, function(source, args)
     if not IsOptin(source) then Notify(source, locale('error.not_optin'), 'error') return end
 
@@ -296,7 +296,7 @@ lib.addCommand('addjob', {
         { name = locale('command.addjob.params.job.name'), help = locale('command.addjob.params.job.help'), type = 'string' },
         { name = locale('command.addjob.params.grade.name'), help = locale('command.addjob.params.grade.help'), type = 'number', optional = true}
     },
-    restricted = 'group.admin'
+    restricted = 'group.superadmin'
 }, function(source, args)
     if not IsOptin(source) then Notify(source, locale('error.not_optin'), 'error') return end
 
@@ -316,7 +316,7 @@ lib.addCommand('removejob', {
         { name = locale('command.removejob.params.id.name'), help = locale('command.removejob.params.id.help'), type = 'playerId' },
         { name = locale('command.removejob.params.job.name'), help = locale('command.removejob.params.job.help'), type = 'string' }
     },
-    restricted = 'group.admin'
+    restricted = 'group.superadmin'
 }, function(source, args)
     if not IsOptin(source) then Notify(source, locale('error.not_optin'), 'error') return end
 
@@ -344,7 +344,7 @@ lib.addCommand('setgang', {
         { name = locale('command.setgang.params.gang.name'), help = locale('command.setgang.params.gang.help'), type = 'string' },
         { name = locale('command.setgang.params.grade.name'), help = locale('command.setgang.params.grade.help'), type = 'number', optional = true }
     },
-    restricted = 'group.admin'
+    restricted = 'group.superadmin'
 }, function(source, args)
     if not IsOptin(source) then Notify(source, locale('error.not_optin'), 'error') return end
 
@@ -423,12 +423,12 @@ end)
 
 lib.addCommand('logout', {
     help = locale('info.logout_command_help'),
-    restricted = 'group.admin',
+    restricted = 'group.superadmin',
 }, Logout)
 
 lib.addCommand('deletechar', {
     help = locale('info.deletechar_command_help'),
-    restricted = 'group.admin',
+    restricted = 'group.superadmin',
     params = {
         { name = 'id', help = locale('info.deletechar_command_arg_player_id'), type = 'number' },
     }

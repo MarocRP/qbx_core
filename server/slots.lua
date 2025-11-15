@@ -6,7 +6,7 @@
 --       {name = 'identifier', help = 'Player identifier (license:xxxxx)', type = 'string'},
 --       {name = 'slots', help = 'Enter the number of characters slots the player is expected to have', type = 'number'},
 --   },
---   restricted = "group.admin"
+--   restricted = "group.superadmin"
 -- }, function(source, args)
 --   local result = storage.fetchSlots(args.identifier, args.identifier)
 --   if result and result[1] then
@@ -24,7 +24,7 @@
 --       {name = 'identifier', help = 'Player identifier (license:xxxxx) or (license2:xxxxx)', type = 'string'},
 --       {name = 'slots', help = 'Enter the number of characters slots the player is expected to have', type = 'number'},
 --   },
---   restricted = 'group.admin'
+--   restricted = 'group.superadmin'
 -- }, function(source, args)
 --   local result = storage.fetchSlots(args.identifier, args.identifier)
 --   if result and result[1] then
@@ -41,7 +41,7 @@
 --   params = {
 --       {name = 'identifier', help = 'Player identifier (license:xxxxx)', type = 'string'},
 --   },
---   restricted = "group.admin"
+--   restricted = "group.superadmin"
 -- }, function(source, args)
 --   local result = storage.fetchSlots(args.identifier, args.identifier)
 --   if result and result[1] then
@@ -55,7 +55,7 @@
 --   params = {
 --       {name = 'citizenid', help = 'Player citizenid', type = 'string'}
 --   },
---   restricted = "group.admin"
+--   restricted = "group.superadmin"
 -- }, function(source, args)
 --   local result = storage.togglePlayerDisabled(args.citizenid, 0)
 --   if result then
@@ -71,7 +71,7 @@
 --     {name = 'citizenid', help = 'Player citizenid', type = 'string'},
 --     {name = 'reason', help = 'Reason for disabling the character', type = 'string'}
 --   },
---   restricted = "group.admin"
+--   restricted = "group.superadmin"
 -- }, function(source, args)
 --   local reason = args.reason or 'No reason provided'
 --   for k, v in pairs(args) do

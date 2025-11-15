@@ -152,7 +152,7 @@ local function randomPed()
     local ped = randomPeds[math.random(1, #randomPeds)]
     lib.requestModel(ped.model, config.loadingModelsTimeout)
     SetPlayerModel(cache.playerId, ped.model)
-    pcall(function() exports['illenium-appearance']:setPedAppearance(PlayerPedId(), ped) end)
+    pcall(function() exports.ss_appearance:setPedAppearance(PlayerPedId(), ped) end)
     SetModelAsNoLongerNeeded(ped.model)
 end
 
@@ -164,7 +164,7 @@ local function previewPed(citizenId)
     if model and clothing then
         lib.requestModel(model, config.loadingModelsTimeout)
         SetPlayerModel(cache.playerId, model)
-        pcall(function() exports['illenium-appearance']:setPedAppearance(PlayerPedId(), json.decode(clothing)) end)
+        pcall(function() exports.ss_appearance:setPedAppearance(PlayerPedId(), json.decode(clothing)) end)
         SetModelAsNoLongerNeeded(model)
     else
         randomPed()

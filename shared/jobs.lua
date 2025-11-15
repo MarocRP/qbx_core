@@ -1,28 +1,6 @@
 ---Job names must be lower case (top level table key)
 ---@type table<string, Job>
 return {
-	-- Admin Job
-	['admin'] = {
-		label = 'MAROC ROLEPLAY',
-		defaultDuty = true,
-		offDutyPay = false,
-		grades = {
-            [0] = {
-                name = 'MODERATOR',
-                payment = 0,
-            },
-            [1] = {
-                name = 'ADMIN',
-                payment = 0,
-                isboss = true,
-            },
-            [2] = {
-                name = 'SUPER ADMIN',
-                payment = 0,
-                isboss = true,
-            },
-        },
-	},
 	['unemployed'] = {
 		label = 'CIVILIAN',
 		defaultDuty = true,
@@ -41,21 +19,21 @@ return {
 		offDutyPay = false,
 		grades = {
             [0] = {
-                name = 'GOUVERNOR',
+                name = 'GOVERNOR',
+				isboss = true,
                 payment = 0,
-                isboss = true,
             },
         },
 	},
 	['economy'] = {
-		label = 'MINISTRY OF ECONOMY',
+		label = 'EB',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
             [0] = {
-                name = 'MINISTER DELEGATE',
+                name = 'ASSISTANT SECRETARY OF THE STATE',
+				isboss = true,
                 payment = 0,
-                isboss = true,
             },
         },
 	},
@@ -66,12 +44,12 @@ return {
 		grades = {
             [0] = {
                 name = 'JUDGE',
-                payment = 0
+                payment = 0,
             },
 			[1] = {
                 name = 'SENIOR JUDGE',
 				isboss = true,
-                payment = 0
+                payment = 0,
             },
         },
 	},
@@ -115,7 +93,6 @@ return {
             },
 			[8] = {
                 name = 'COMMANDER',
-				isboss = true,
                 payment = 670
             },
 			[9] = {
@@ -136,7 +113,7 @@ return {
         },
 	},
 	['firefighter'] = { -- 12
-		label = 'LSFD',
+		label = 'SAFD',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -158,15 +135,17 @@ return {
             },
 			[4] = {
                 name = 'BATTALION CHIEF', -- 1
-                payment = 470
+                payment = 470,
             },
 			[5] = {
                 name = 'ASSISTANT CHIEF', -- 1
-                payment = 520
+				isboss = true,
+                payment = 520,
             },
 			[6] = {
                 name = 'CHIEF', -- 1
-                payment = 570
+				isboss = true,
+                payment = 570,
             },
         },
 	},
@@ -205,7 +184,7 @@ return {
 	},
 	-- State Companies
 	['farmer'] = {
-		label = 'LOS SANTOS AGRI',
+		label = 'AGRI CO',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -230,7 +209,7 @@ return {
         },
 	},
 	['miner'] = {
-		label = 'LOS SANTOS MINECO',
+		label = 'MINE CO',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -272,7 +251,7 @@ return {
         },
 	},
 	['courier'] = {
-		label = 'AMAZON',
+		label = 'AMAZ OFF',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -288,7 +267,7 @@ return {
         },
 	},
 	['fueler'] = {
-		label = 'SHELL',
+		label = 'TERR OIL',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -304,7 +283,7 @@ return {
         },
 	},
 	['electrician'] = { -- SOON
-		label = 'LOS SANTOS DEPT OF WATER AND POWER',
+		label = 'LSDWP',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -348,7 +327,7 @@ return {
     },
 	-- Restaurants
     ['burgershot'] = {
-        label = 'BURGERSHOT RESTAURANT',
+        label = 'BURGERSHOT',
         defaultDuty = false,
         offDutyPay = false,
         grades = {
@@ -424,7 +403,7 @@ return {
         },
     },
     ['freshfruit'] = {
-        label = 'FRESH FRUIT',
+        label = 'FRESH FRUITS',
         defaultDuty = false,
         offDutyPay = false,
         grades = {
@@ -450,7 +429,7 @@ return {
     },
 	-- Night Clubs
 	['unicorn'] = {
-		label = 'UNICORN NIGHTCLUB',
+		label = 'UNICORN',
         type = 'nightclub',
 		defaultDuty = true,
 		offDutyPay = false,
@@ -476,7 +455,7 @@ return {
         },
 	},
 	['ibiza'] = {
-		label = 'IBIZA NIGHTCLUB',
+		label = 'IBIZA',
         type = 'nightclub',
 		defaultDuty = true,
 		offDutyPay = false,
@@ -502,7 +481,7 @@ return {
         },
 	},
 	['club77'] = {
-		label = '77 NIGHTCLUB',
+		label = 'CLUB 77',
         type = 'nightclub',
 		defaultDuty = true,
 		offDutyPay = false,
@@ -528,7 +507,7 @@ return {
         },
 	},
 	['vazou'] = {
-		label = 'VAZOU NIGHTCLUB',
+		label = 'VAZOU',
         type = 'nightclub',
 		defaultDuty = true,
 		offDutyPay = false,
@@ -581,7 +560,7 @@ return {
 	},
 	-- Bazar Shops
 	['pawnshop'] = {
-		label = 'ABBAS BAZAAR',
+		label = 'PAWN AND JEWELRY',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -733,7 +712,7 @@ return {
 	},
 	-- Mechanic Shops
 	['mechanic1'] = {
-		label = 'AUTO EXOTIC',
+		label = 'BENNYS',
         type = 'mechanic',
 		defaultDuty = true,
 		offDutyPay = false,
@@ -759,7 +738,7 @@ return {
         },
 	},
 	['mechanic2'] = {
-		label = 'LOS SANTOS CUSTOMS',
+		label = 'LS CUSTOMS',
         type = 'mechanic',
 		defaultDuty = true,
 		offDutyPay = false,
@@ -811,8 +790,8 @@ return {
         },
 	},
 	-- Chill Spot
-	['chillspot'] = {
-		label = 'CHILL SPOT LOUNGE',
+	['blockbudz'] = {
+		label = 'BLOCK BUDZ',
 		defaultDuty = false,
 		offDutyPay = false,
 		grades = {
