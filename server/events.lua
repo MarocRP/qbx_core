@@ -41,6 +41,7 @@ AddEventHandler('playerDropped', function(reason)
     if not QBX.Players[src] then return end
     GlobalState.PlayerCount = GetNumPlayerIndices()
     local player = QBX.Players[src]
+    TriggerEvent('QBCore:Server:OnPlayerUnload', src)
     player.PlayerData.lastLoggedOut = os.time()
     logger.log({
         source = 'qbx_core',

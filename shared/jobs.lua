@@ -60,53 +60,61 @@ return {
         offDutyPay = false,
         grades = {
             [0] = {
-                name = 'OFFICER P1',
+                name = 'OFFICER I',
                 payment = 270
             },
 			[1] = {
-                name = 'OFFICER P2',
+                name = 'OFFICER II',
                 payment = 320
             },
 			[2] = {
-                name = 'OFFICER P3',
+                name = 'OFFICER III',
                 payment = 370
             },
 			[3] = {
-                name = 'DETECTIVE',
+                name = 'DETECTIVE I',
                 payment = 420
             },
 			[4] = {
-                name = 'CORPORAL',
-                payment = 470
+                name = 'DETECTIVE II',
+                payment = 420
             },
 			[5] = {
-                name = 'SERGEANT',
-                payment = 520
+                name = 'DETECTIVE III',
+                payment = 420
             },
 			[6] = {
-                name = 'LIEUTENANT',
-                payment = 570
+                name = 'SERGEANT I',
+                payment = 470
             },
 			[7] = {
-                name = 'CAPTAIN',
-                payment = 620
+                name = 'SERGEANT II', -- 1 (HSU, MTU, ASD, MRD)
+                payment = 520
             },
 			[8] = {
-                name = 'COMMANDER',
-                payment = 670
+                name = 'LIEUTENANT', -- 4 (Head of Detectives Bureau (RHD/GND), Office of Special Operations)
+                payment = 570
             },
 			[9] = {
-                name = 'DEPUTY CHIEF',
-				isboss = true,
-                payment = 720
+                name = 'CAPTAIN', -- 1 (Ranks Management)
+                payment = 620
             },
 			[10] = {
-                name = 'ASSISTANT CHIEF',
+                name = 'COMMANDER', -- 1 (Internal Affairs)
+                payment = 670
+            },
+			[11] = {
+                name = 'DEPUTY CHIEF', -- 1
 				isboss = true,
                 payment = 720
             },
-			[11] = {
-                name = 'CHIEF',
+			[12] = {
+                name = 'ASSISTANT CHIEF', -- 1
+				isboss = true,
+                payment = 720
+            },
+			[13] = {
+                name = 'CHIEF', -- 1
 				isboss = true,
                 payment = 770
             },
@@ -155,7 +163,7 @@ return {
 		offDutyPay = false,
 		grades = {
 			[0] = {
-                name = 'TRAINEE NURSE', -- 0
+                name = 'INTERN', -- 0
                 payment = 280
             },
 			[1] = {
@@ -179,6 +187,19 @@ return {
                 name = 'DIRECTOR', -- 1
 				isboss = true,
                 payment = 780
+            },
+        },
+	},
+    -- Banking Job
+	['banker'] = {
+		label = 'MAZE BANK',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			[0] = {
+                name = 'banker',
+				isboss = true,
+                payment = 0,
             },
         },
 	},
@@ -251,7 +272,7 @@ return {
         },
 	},
 	['courier'] = {
-		label = 'AMAZ OFF',
+		label = 'AMAZOFF',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -306,7 +327,7 @@ return {
         offDutyPay = false,
         grades = {
             [0] = {
-                name = 'REPRESENTATIVE',
+                name = 'DEALER',
                 payment = 0
             },
             [1] = {
@@ -332,7 +353,7 @@ return {
         offDutyPay = false,
         grades = {
             [0] = {
-                name = 'BURGER MAKER',
+                name = 'COOK',
                 payment = 0
             },
             [1] = {
@@ -357,7 +378,7 @@ return {
         offDutyPay = false,
         grades = {
             [0] = {
-                name = 'PIZZA MAKER',
+                name = 'COOK',
                 payment = 0
             },
             [1] = {
@@ -408,7 +429,7 @@ return {
         offDutyPay = false,
         grades = {
             [0] = {
-                name = 'JUICE MAKER',
+                name = 'BARISTA',
                 payment = 0
             },
             [1] = {
@@ -539,20 +560,20 @@ return {
 		offDutyPay = false,
 		grades = {
             [0] = {
-                name = 'LAWYER TRAINEE',
+                name = 'INTERN',
                 payment = 0
             },
             [1] = {
-                name = 'LAWYER',
+                name = 'ATTORNEY',
                 payment = 0
             },
             [2] = {
-                name = 'LAWYER EXPERT',
+                name = 'MANAGER',
 				isboss = true,
                 payment = 0
             },
             [3] = {
-                name = 'LAWYER FOUNDER',
+                name = 'FOUNDER',
 				isboss = true,
                 payment = 0
             },
@@ -565,7 +586,7 @@ return {
 		offDutyPay = false,
 		grades = {
             [0] = {
-                name = 'REPRESENTATIVE',
+                name = 'CLERK',
                 payment = 0
             },
             [1] = {
@@ -591,7 +612,7 @@ return {
 		offDutyPay = false,
 		grades = {
             [0] = {
-                name = 'REPRESENTATIVE',
+                name = 'SELLER',
                 payment = 0
             },
             [1] = {
@@ -616,57 +637,7 @@ return {
 		offDutyPay = false,
 		grades = {
             [0] = {
-                name = 'REPRESENTATIVE',
-                payment = 0
-            },
-            [1] = {
-                name = 'SUPERVISOR',
-                payment = 0
-            },
-			[2] = {
-                name = 'MANAGER',
-                isboss = true,
-                payment = 0
-            },
-			[3] = {
-                name = 'OWNER',
-                isboss = true,
-                payment = 0
-            },
-        },
-	},
-	['motordealer1'] = {
-		label = 'EXOTIC MOTORS',
-		defaultDuty = true,
-		offDutyPay = false,
-		grades = {
-            [0] = {
-                name = 'REPRESENTATIVE',
-                payment = 0
-            },
-            [1] = {
-                name = 'SUPERVISOR',
-                payment = 0
-            },
-			[2] = {
-                name = 'MANAGER',
-                isboss = true,
-                payment = 0
-            },
-			[3] = {
-                name = 'OWNER',
-                isboss = true,
-                payment = 0
-            },
-        },
-	},
-	['motordealer2'] = {
-		label = 'LEGENDARY MOTORS',
-		defaultDuty = true,
-		offDutyPay = false,
-		grades = {
-            [0] = {
-                name = 'REPRESENTATIVE',
+                name = 'SELLER',
                 payment = 0
             },
             [1] = {
@@ -712,13 +683,13 @@ return {
 	},
 	-- Mechanic Shops
 	['mechanic1'] = {
-		label = 'BENNYS',
+		label = 'LS CUSTOMS',
         type = 'mechanic',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
             [0] = {
-                name = 'RECRUIT',
+                name = 'APPRENTICE',
                 payment = 0
             },
             [1] = {
@@ -738,13 +709,39 @@ return {
         },
 	},
 	['mechanic2'] = {
-		label = 'LS CUSTOMS',
+		label = 'MOSLEY',
         type = 'mechanic',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
             [0] = {
-                name = 'RECRUIT',
+                name = 'APPRENTICE',
+                payment = 0
+            },
+            [1] = {
+                name = 'MECHANIC',
+                payment = 0
+            },
+			[2] = {
+                name = 'MANAGER',
+                isboss = true,
+                payment = 0
+            },
+			[3] = {
+                name = 'OWNER',
+                isboss = true,
+                payment = 0
+            },
+        },
+	},
+	['mechanic3'] = {
+		label = 'BENNYS',
+        type = 'mechanic',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = {
+                name = 'APPRENTICE',
                 payment = 0
             },
             [1] = {
@@ -789,14 +786,14 @@ return {
             },
         },
 	},
-	-- Chill Spot
-	['blockbudz'] = {
-		label = 'BLOCK BUDZ',
+	-- Whitewidow
+	['whitewidow'] = {
+		label = 'WHITEWIDOW',
 		defaultDuty = false,
 		offDutyPay = false,
 		grades = {
             [0] = {
-                name = 'REPRESENTATIVE',
+                name = 'BUDTENDER',
                 payment = 0
             },
             [1] = {

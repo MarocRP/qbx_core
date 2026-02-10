@@ -1070,7 +1070,17 @@ function Save(source)
         return
     end
 
-    playerData.metadata.health = GetEntityHealth(ped)
+    local maxHealth = GetEntityMaxHealth(ped)
+    if not maxHealth or maxHealth <= 0 then
+        maxHealth = 200
+    end
+    local currentHealth = GetEntityHealth(ped)
+    if currentHealth < 0 then
+        currentHealth = 0
+    elseif currentHealth > maxHealth then
+        currentHealth = maxHealth
+    end
+    playerData.metadata.health = math.floor(currentHealth)
     playerData.metadata.armor = GetPedArmour(ped)
 
     if playerState.isLoggedIn then
